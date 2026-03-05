@@ -84,14 +84,12 @@
       "dependencies": {
         "@amplitude/analytics-react-native": "^1.5.16",
         "@amplitude/plugin-session-replay-react-native": "^0.4.6",
-        "@awesome.me/kit-7e5191b030": "latest",
         "@braze/expo-plugin": "^3.1.0",
         "@braze/react-native-sdk": "^17.0.1",
         "@emotion/native": "^11.11.0",
         "@emotion/react": "^11.14.0",
         "@expo-google-fonts/inter": "^0.4.2",
         "@expo-google-fonts/plus-jakarta-sans": "^0.4.2",
-        "@fortawesome/react-native-fontawesome": "^0.3.2",
         "@gorhom/bottom-sheet": "^5.2.6",
         "@intercom/intercom-react-native": "9.6.3",
         "@mux/mux-data-react-native-video": "^0.19.7",
@@ -103,7 +101,6 @@
         "@react-native-firebase/app": "^23.7.0",
         "@react-native-firebase/app-check": "^23.7.0",
         "@react-native-firebase/auth": "^23.7.0",
-        "@react-native-google-signin/google-signin": "^21.2.0",
         "@react-navigation/bottom-tabs": "^6.6.1",
         "@react-navigation/native": "^6.1.18",
         "@react-navigation/native-stack": "^6.11.0",
@@ -255,8 +252,6 @@
     "@apphosting/build": ["@apphosting/build@0.1.7", "", { "dependencies": { "@apphosting/common": "^0.0.9", "@npmcli/promise-spawn": "^3.0.0", "colorette": "^2.0.20", "commander": "^11.1.0", "npm-pick-manifest": "^9.0.0", "ts-node": "^10.9.1" }, "bin": { "apphosting-local-build": "dist/bin/localbuild.js" } }, "sha512-zNgQGiAWDOj6c+4ylv5ej3nLGXzMAVmzCGMqlbSarHe4bvBmZ2C5GfBRdJksedP7C9pqlwTWpxU5+GSzhJ+nKA=="],
 
     "@apphosting/common": ["@apphosting/common@0.0.8", "", {}, "sha512-RJu5gXs2HYV7+anxpVPpp04oXeuHbV3qn402AdXVlnuYM/uWo7aceqmngpfp6Bi376UzRqGjfpdwFHxuwsEGXQ=="],
-
-    "@awesome.me/kit-7e5191b030": ["@awesome.me/kit-7e5191b030@1.0.19", "https://npm.fontawesome.com/@awesome.me/kit-7e5191b030/-/kit-7e5191b030-1.0.19.tgz", { "dependencies": { "@fortawesome/fontawesome-common-types": "^7.2.0" } }, "sha512-78fU1/RJPfC9jqQRU5kYCVRiIdWTsbophfUAeTcNx7LR5liYodWUSuxvKzlDJZHG7fLXNm4QdbjRcGlyrIq7nw=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
 
@@ -664,12 +659,6 @@
 
     "@firebase/webchannel-wrapper": ["@firebase/webchannel-wrapper@1.0.5", "", {}, "sha512-+uGNN7rkfn41HLO0vekTFhTxk61eKa8mTpRGLO0QSqlQdKvIoGAvLp3ppdVIWbTGYJWM6Kp0iN+PjMIOcnVqTw=="],
 
-    "@fortawesome/fontawesome-common-types": ["@fortawesome/fontawesome-common-types@7.2.0", "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-7.2.0.tgz", {}, "sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw=="],
-
-    "@fortawesome/fontawesome-svg-core": ["@fortawesome/fontawesome-svg-core@7.2.0", "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-7.2.0.tgz", { "dependencies": { "@fortawesome/fontawesome-common-types": "7.2.0" } }, "sha512-6639htZMjEkwskf3J+e6/iar+4cTNM9qhoWuRfj9F3eJD6r7iCzV1SWnQr2Mdv0QT0suuqU8BoJCZUyCtP9R4Q=="],
-
-    "@fortawesome/react-native-fontawesome": ["@fortawesome/react-native-fontawesome@0.3.2", "https://npm.fontawesome.com/@fortawesome/react-native-fontawesome/-/react-native-fontawesome-0.3.2.tgz", { "dependencies": { "humps": "^2.0.1", "prop-types": "^15.7.2" }, "peerDependencies": { "@fortawesome/fontawesome-svg-core": "~1 || ~6", "react-native": ">= 0.67", "react-native-svg": ">= 11.x" } }, "sha512-CiWfJWSZHRg12VXlaeFnaa5yJVPOrjsSFEvF6ntz3cnjg4oN3cvauL+JATacMCl0v9xzib32qC1WZAvvGkfB4w=="],
-
     "@freakycoder/react-native-bounceable": ["@freakycoder/react-native-bounceable@1.0.3", "", {}, "sha512-+iMq2tnqxCwFjitbPUz9nZ+VfJ8OU9waIlDJAAsoq1229QEwCmERCNy5zVtDsz75q3i4FLXX/n7fimdMzmP21A=="],
 
     "@google-cloud/cloud-sql-connector": ["@google-cloud/cloud-sql-connector@1.9.0", "", { "dependencies": { "@googleapis/sqladmin": "^35.0.0", "gaxios": "^7.1.3", "google-auth-library": "^10.5.0", "p-throttle": "^7.0.0" } }, "sha512-kCsWuWBCHBdRSyrNHoJ4lIsd6P3JeXQk3OopsS/TCfJzTs2dfEzQvwl5G7Gn7u/rX60m+X7wv4wHDMP2sG5AFA=="],
@@ -920,8 +909,6 @@
 
     "@react-native-firebase/auth": ["@react-native-firebase/auth@23.7.0", "", { "dependencies": { "plist": "^3.1.0" }, "peerDependencies": { "@react-native-firebase/app": "23.7.0", "expo": ">=47.0.0" }, "optionalPeers": ["expo"] }, "sha512-+NSg4fUhQhj4CNKbPzLiazGvTZIQkAesn0MhBukfY/eGR5SXw/kvinEY8XDbQFxSc8cPp5rNO/XrkaP/msgyUQ=="],
 
-    "@react-native-google-signin/google-signin": ["@react-native-google-signin/google-signin@21.2.0", "https://npm.pkg.github.com/download/@react-native-google-signin/google-signin/21.2.0/e525c1410b818aa64299e0e072828bb4d5e47ebd", { "dependencies": { "@types/google-one-tap": "^1.2.6", "jwt-decode": "^4.0.0", "nanoevents": "^9.1.0" }, "peerDependencies": { "expo": ">=52.0.40", "react": "*", "react-native": "*" } }, "sha512-U6hNxiy17gdFiD9DyEbvu7vy4k3ka1HEreFyZQDHiPt6pVsLWYqz80S7VZLKSMwGnMp7xjoiw4LsYbTV22NtHg=="],
-
     "@react-native-masked-view/masked-view": ["@react-native-masked-view/masked-view@0.3.2", "", { "peerDependencies": { "react": ">=16", "react-native": ">=0.57" } }, "sha512-XwuQoW7/GEgWRMovOQtX3A4PrXhyaZm0lVUiY8qJDvdngjLms9Cpdck6SmGAUNqQwcj2EadHC1HwL0bEyoa/SQ=="],
 
     "@react-native/assets-registry": ["@react-native/assets-registry@0.81.5", "", {}, "sha512-705B6x/5Kxm1RKRvSv0ADYWm5JOnoiQ1ufW7h8uu2E6G9Of/eE6hP/Ivw3U5jI16ERqZxiKQwk34VJbB0niX9w=="],
@@ -1139,8 +1126,6 @@
     "@types/follow-redirects": ["@types/follow-redirects@1.14.4", "", { "dependencies": { "@types/node": "*" } }, "sha512-GWXfsD0Jc1RWiFmMuMFCpXMzi9L7oPDVwxUnZdg89kDNnqsRfUKXEtUYtA98A6lig1WXH/CYY/fvPW9HuN5fTA=="],
 
     "@types/geojson": ["@types/geojson@7946.0.16", "", {}, "sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg=="],
-
-    "@types/google-one-tap": ["@types/google-one-tap@1.2.7", "", {}, "sha512-u+1J+ldj/ZvvBBP7a5zC+sWy5LaHVfcTcOW/aaTKYoWUlsWi6OCBYYN4dsPlYRmA08y9jag8MtcT5rVgYdPf1g=="],
 
     "@types/google.maps": ["@types/google.maps@3.58.1", "", {}, "sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ=="],
 
@@ -2020,8 +2005,6 @@
 
     "human-signals": ["human-signals@2.1.0", "", {}, "sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw=="],
 
-    "humps": ["humps@2.0.1", "", {}, "sha512-E0eIbrFWUhwfXJmsbdjRQFQPrl5pTEoKlz163j1mTqqUnU9PgR4AgB8AIITzuB3vLBdxZXyZ9TDIrwB2OASz4g=="],
-
     "husky": ["husky@9.1.7", "", { "bin": { "husky": "bin.js" } }, "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA=="],
 
     "hyperlinker": ["hyperlinker@1.0.0", "", {}, "sha512-Ty8UblRWFEcfSuIaajM34LdPXIhbs1ajEX/BBPv24J+enSVaEVY63xQ6lTO9VRYS5LAoghIG0IDJ+p+IPzKUQQ=="],
@@ -2260,8 +2243,6 @@
 
     "jws": ["jws@4.0.1", "", { "dependencies": { "jwa": "^2.0.1", "safe-buffer": "^5.0.1" } }, "sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA=="],
 
-    "jwt-decode": ["jwt-decode@4.0.0", "", {}, "sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA=="],
-
     "keychain": ["keychain@1.5.0", "", {}, "sha512-liyp4r+93RI7EB2jhwaRd4MWfdgHH6shuldkaPMkELCJjMFvOOVXuTvw1pGqFfhsrgA6OqfykWWPQgBjQakVag=="],
 
     "kind-of": ["kind-of@3.2.2", "", { "dependencies": { "is-buffer": "^1.1.5" } }, "sha512-NOW9QQXMoZGg/oqnVNoNTTIFEIid1627WCffUBJEdMxYApq7mNE7CpzucIPc+ZQg25Phej7IJSmX3hO+oblOtQ=="],
@@ -2485,8 +2466,6 @@
     "mz": ["mz@2.7.0", "", { "dependencies": { "any-promise": "^1.0.0", "object-assign": "^4.0.1", "thenify-all": "^1.0.0" } }, "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q=="],
 
     "nan": ["nan@2.24.0", "", {}, "sha512-Vpf9qnVW1RaDkoNKFUvfxqAbtI8ncb8OJlqZ9wwpXzWPEsvsB1nvdUi6oYrHIkQ1Y/tMDnr1h4nczS0VB9Xykg=="],
-
-    "nanoevents": ["nanoevents@9.1.0", "", {}, "sha512-Jd0fILWG44a9luj8v5kED4WI+zfkkgwKyRQKItTtlPfEsh7Lznfi1kr8/iZ+XAIss4Qq5GqRB0qtWbaz9ceO/A=="],
 
     "nanoid": ["nanoid@3.3.8", "", { "bin": { "nanoid": "bin/nanoid.cjs" } }, "sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w=="],
 
