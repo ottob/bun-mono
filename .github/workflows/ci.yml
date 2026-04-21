@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+env:
+  TURBO_TELEMETRY_DISABLED: 1
+  CI: true
+
+jobs:
+  build:
+    name: Typecheck and Test
+    timeout-minutes: 95
+    environment: development
+    runs-on: ubuntu-latest
+    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # env:
+    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v5
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        env:
+          YAZEN_NPM_3DLOOK: ${{ secrets.YAZEN_NPM_3DLOOK }}
+          YAZEN_NPM_FONTAWESOME: ${{ secrets.YAZEN_NPM_FONTAWESOME }}
+          SKIP_SKIA_DOWNLOAD: 1
+          SENTRYCLI_SKIP_DOWNLOAD: 1
+        run: |
+          bun install --verbose
+
+      - name: Setup Google Application Credentials
+        run: |
+          cat <<EOF > /home/runner/google_application_credentials.json
+          ${{ secrets.TRANSLATIONS_SERVICE_ACCOUNT }}
+          EOF
+
+      - name: Configure project
+        run: bun run configure
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /home/runner/google_application_credentials.json
+
+      - name: Build i18n
+        run: bun run turbo:build --filter '@repo/i18n'
+
+      - name: Restore translation keys
+        run: bun run migrate --migration i18nRestoreGenerated
+
+      - name: Typecheck and Test
+        env:
+          YAZEN_NPM_3DLOOK: ""
+          YAZEN_NPM_FONTAWESOME: ""
+        run: bun exec turbo run check-types test
+  lint:
+    name: Lint
+    timeout-minutes: 95
+    environment: development
+    runs-on: ubuntu-latest
+    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # env:
+    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        env:
+          YAZEN_NPM_3DLOOK: ${{ secrets.YAZEN_NPM_3DLOOK }}
+          YAZEN_NPM_FONTAWESOME: ${{ secrets.YAZEN_NPM_FONTAWESOME }}
+          SKIP_SKIA_DOWNLOAD: 1
+          SENTRYCLI_SKIP_DOWNLOAD: 1
+        run: |
+          bun install
+
+      - name: Lint and format
+        env:
+          YAZEN_NPM_3DLOOK: ""
+          YAZEN_NPM_FONTAWESOME: ""
+        run: bun exec turbo run format-and-lint:github
+        #run: pnpm run format-and-lint:staged
