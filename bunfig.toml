@@ -1,0 +1,15 @@
+[install]
+# Only install package versions published at least 3 days ago
+minimumReleaseAge = 259200
+# These packages will bypass the 3-day minimum age requirement
+minimumReleaseAgeExcludes = ["@types/bun", "turbo"]
+
+[install.scopes]
+"@3dlook-me" = { token = "$YAZEN_NPM_3DLOOK", url = "https://npm.pkg.github.com" }
+"@fortawesome" = { token = "$YAZEN_NPM_FONTAWESOME", url = "https://npm.fontawesome.com/" }
+"@awesome.me" = { token = "$YAZEN_NPM_FONTAWESOME", url = "https://npm.fontawesome.com/" }
+"@react-native-google-signin" = { token = "$YAZEN_NPM_3DLOOK", url = "https://npm.pkg.github.com" }
+
+[test]
+preload = ["./projects/helpers/test-setup.ts"]
+pathIgnorePatterns = ["**/dist/**", "**/*.spec.ts", "**/e2e/**"]
